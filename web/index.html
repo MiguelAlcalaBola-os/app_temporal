@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Estilos Inicio -->
+    <style>
+      .centerlogo {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("ruta/a/tu-imagen.jpg"); /* Reemplaza con la ruta a tu imagen */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        box-shadow: 5px 5px 13px 3px #00000094;
+      }
+
+      .background {
+        background-color: #ffffff;
+      }
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #000;
+      }
+      .splash-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+      }
+      .splash-image {
+        width: auto;
+        height: auto;
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+        max-width: 500px; /* Tamaño máximo de ancho en píxeles */
+        min-width: 100px; /* Tamaño máximo de ancho en píxeles */
+      }
+    </style>
+    <base href="$FLUTTER_BASE_HREF" />
+
+    <meta charset="UTF-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="description" content="Reservatupista." />
+    <meta name="keywords" content="Flutter,web,application" />
+    <meta name="author" content="Modularbox" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reservatupista</title>
+    <!-- <script defer src="main.dart.js" type="application/javascript"></script> -->
+
+    <!-- iOS meta tags & icons -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="reservatu_pista" />
+    <link
+      rel="apple-touch-icon"
+      href="https://app.reservatupista.com/assets/icons/Icon-192.png"
+    />
+
+    <!-- No guardar el cache -->
+    <meta
+      http-equiv="Cache-Control"
+      content="no-cache, no-store, must-revalidate"
+    />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png" />
+
+    <link rel="manifest" href="manifest.json" />
+
+    <script src="https://unpkg.com/platform@1.3.5/platform.js"></script>
+    <script type="text/javascript">
+      let isSafari = /^((?!chrome|android).)*safari/i.test(platform.ua);
+      if (isSafari) {
+        HTMLCanvasElement.prototype.getContext = (function (orig) {
+          return function (type) {
+            return type !== "webgl2" ? orig.apply(this, arguments) : null;
+          };
+        })(HTMLCanvasElement.prototype.getContext);
+      }
+    </script>
+    <!-- <script>
+        // The value below is injected by flutter build, do not touch.
+        var serviceWorkerVersion = null;
+    </script> -->
+    <!-- This script adds the flutter initialization JS code -->
+    <!-- <script src="flutter.js" defer></script> -->
+  </head>
+  <body class="background">
+    <!-- <img src="./icons/splas_logo_compress.gif" class="centerlogo" /> -->
+
+    <div class="splash-container">
+      <img
+        src="https://app.reservatupista.com/assets/icons/splas_logo_compress.gif"
+        class="splash-image"
+        alt="Splash Image"
+      />
+    </div>
+    <script>
+      // Eliminar la cache
+      function clearCache() {
+        if ("caches" in window) {
+          caches.keys().then(function (names) {
+            for (let name of names) caches.delete(name);
+          });
+        }
+      }
+
+      var serviceWorkerVersion = `{{flutter_service_worker_version}}`;
+      // Eliminar el principio
+      serviceWorkerVersion = serviceWorkerVersion.substring(1);
+
+      // Eliminar el final
+      serviceWorkerVersion = serviceWorkerVersion.slice(0, -1);
+      var scriptLoaded = false;
+      function loadMainDartJs() {
+        if (scriptLoaded) {
+          return;
+        }
+        scriptLoaded = true;
+        var scriptTag = document.createElement("script");
+        scriptTag.src = "main.dart.js";
+        scriptTag.type = "application/javascript";
+        document.body.append(scriptTag);
+      }
+
+      if ("serviceWorker" in navigator) {
+        // Service workers are supported. Use them.
+        window.addEventListener("load", function () {
+          var serviceWorkerUrl =
+            "flutter_service_worker.js?v=" + serviceWorkerVersion;
+
+          navigator.serviceWorker.register(serviceWorkerUrl).then((reg) => {
+            function waitForActivation(serviceWorker) {
+              serviceWorker.addEventListener("statechange", () => {
+                if (serviceWorker.state == "activated") {
+                  console.log("Installed new service worker.");
+                  loadMainDartJs();
+                }
+              });
+            }
+            if (!reg.active && (reg.installing || reg.waiting)) {
+              // No active web worker and we have installed or are installing
+              // one for the first time. Simply wait for it to activate.
+              waitForActivation(reg.installing ?? reg.waiting);
+            } else if (!reg.active.scriptURL.endsWith(serviceWorkerVersion)) {
+              // When the app updates the serviceWorkerVersion changes, so we
+              // need to ask the service worker to update.
+              console.log("New service worker available.");
+              reg.update();
+              waitForActivation(reg.installing);
+            } else {
+              // Existing service worker is still good.
+              console.log("Loading app from service worker.");
+              loadMainDartJs();
+            }
+          });
+
+          // If service worker doesn't succeed in a reasonable amount of time,
+          // fallback to plaint <script> tag.
+          setTimeout(() => {
+            if (!scriptLoaded) {
+              console.warn(
+                "Failed to load app from service worker. Falling back to plain <script> tag."
+              );
+              loadMainDartJs();
+            }
+          }, 4000);
+        });
+      } else {
+        // Service workers not supported. Just drop the <script> tag.
+        loadMainDartJs();
+      }
+    </script>
+  </body>
+</html>

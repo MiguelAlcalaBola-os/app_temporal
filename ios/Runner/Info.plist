@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CADisableMinimumFrameDurationOnPhone</key>
+	<true/>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleDisplayName</key>
+	<string>ReservatuPista</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>reservatu_pista</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>$(FLUTTER_BUILD_NAME)</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>$(FLUTTER_BUILD_NUMBER)</string>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>La aplicación requiere acceso al micrófono para ofrecerte una experiencia más interactiva y personalizada. Al permitir el acceso al micrófono, podrás disfrutar de funciones como grabación de voz, comandos de voz y comunicación en tiempo real. Garantizamos que tu privacidad y seguridad son nuestra máxima prioridad, y que el acceso al micrófono se utilizará exclusivamente para mejorar tu experiencia dentro de la aplicación. Tu confianza es fundamental para nosotros, y nos comprometemos a utilizar esta función de manera responsable y ética.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>La aplicación requiere acceso a la galería de fotos para permitir a los usuarios acceder imágenes dentro de la aplicación, así como seleccionar imágenes existentes para su uso en diversas funciones, como la creación de perfiles, la publicación de contenido y la personalización de experiencias. Por ejemplo, los usuarios pueden tomar y compartir fotos de sus experiencias utilizando nuestra aplicación. Al acceder a la galería de fotos, los usuarios pueden seleccionar imágenes previamente capturadas para utilizarlas como contenido en sus publicaciones o para personalizar su perfil.</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>La aplicación requiere acceso guardar fotos en la galería para permitir a los usuarios acceder imágenes dentro de la aplicación, así como seleccionar imágenes existentes para su uso en diversas funciones, como la creación de perfiles, la publicación de contenido y la personalización de experiencias. Por ejemplo, los usuarios pueden tomar y compartir fotos de sus experiencias utilizando nuestra aplicación. Al acceder a la galería de fotos, los usuarios pueden seleccionar imágenes previamente capturadas para utilizarlas como contenido en sus publicaciones o para personalizar su perfil.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>La aplicación requiere acceso a la cámara para permitir a los usuarios capturar imágenes dentro de la aplicación, como la creación de perfiles, la publicación de contenido y la personalización de experiencias. Por ejemplo, al permitir el acceso a la cámara, los usuarios pueden tomar y compartir fotos de sus experiencias utilizando nuestra aplicación. Al acceder a la camara de fotos, los usuarios pueden seleccionar imágenes previamente capturadas para utilizarlas como contenido en sus publicaciones o para personalizar su perfil.</string>
+	<key>UIApplicationSupportsIndirectInputEvents</key>
+	<true/>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
+	<key>UIMainStoryboardFile</key>
+	<string>Main</string>
+	<key>UIStatusBarStyle</key>
+	<string></string>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+		<string>UIInterfaceOrientationPortrait</string>
+	</array>
+	<key>UISupportedInterfaceOrientations~ipad</key>
+	<array>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+	</array>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
+</dict>
+</plist>
